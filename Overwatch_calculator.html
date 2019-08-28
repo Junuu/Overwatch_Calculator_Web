@@ -17,7 +17,8 @@
   var p4100to4200;
   var p4200to4300;
   var p4300to4400;
-
+  var p4400to4450;
+  var p4450to4500;
 function set_price_team(){
   	p0to2000=4500;
   	p2000to2500=5500;
@@ -44,9 +45,11 @@ function set_price_not_team()
 	p4100to4200=30000;
 	p4200to4300=50000;
 	p4300to4400=65000;
+  p4400to4450=80000;
+  p4450to4500=90000;
 }
 
-function calculate(startscore,finishscore)
+function calculate(startscore,finishscore,check_team)
   {
   	var price=0;
 
@@ -100,11 +103,21 @@ function calculate(startscore,finishscore)
   		{
   			price=price+(p4300to4400/50);
   		}
-  		else
-  		{        
+  		else if(startscore<4450)
+  		{
+        if(check_team =="팀장")
+        {
   			alert("[ERROR: 계산허용범위 초과] 4400까지 계산된 가격을 반환합니다");
         return price;
+        }
+        else {
+          price=price+(p4400to4450/50);
+        }
   		}
+      else if(startscore<4500)
+      {
+        price=price+(p4450to4500/50);
+      }
   		startscore = startscore + 1;
   	}
 
@@ -129,7 +142,7 @@ function button_active() {
 
     start_score = Number(start_score);
     finish_score = Number(finish_score);
-    result = calculate(start_score,finish_score);
+    result = calculate(start_score,finish_score,check_team);
     document.getElementById("msg").innerHTML = "계산된 가격 : " + result ;
     }
 </script>
