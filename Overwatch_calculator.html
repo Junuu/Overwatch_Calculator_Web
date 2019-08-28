@@ -130,7 +130,6 @@ function button_active() {
     var finish_score = form1.txt2.value ;
     var check_team = form1.team.value ;
     var result = 0;
-    document.getElementById("msg").innerHTML = check_team + "용 " +start_score + " 에서 " + finish_score +" 까지 계산을 시작합니다.";
     if(check_team == "팀장")
     {
       set_price_team();
@@ -142,6 +141,13 @@ function button_active() {
 
     start_score = Number(start_score);
     finish_score = Number(finish_score);
+    if(start_score>finish_score)
+    {
+      alert("ERROR: 마무리 점수가 시작점수보다 낮습니다.");
+      document.getElementById("msg").innerHTML = "마무리 점수를 시작점수보다 높게 설정해주세요." ;
+
+      return;
+    }
     result = calculate(start_score,finish_score,check_team);
     document.getElementById("msg").innerHTML = "계산된 가격 : " + result ;
     }
