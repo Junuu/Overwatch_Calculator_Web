@@ -118,6 +118,12 @@ function calculate(startscore,finishscore,check_team)
       {
         price=price+(p4450to4500/50);
       }
+      else
+      {
+        alert("[ERROR: 계산허용범위 초과] 4500까지 계산된 가격을 반환합니다");
+        return price;
+
+      }
   		startscore = startscore + 1;
   	}
 
@@ -141,6 +147,11 @@ function button_active() {
 
     start_score = Number(start_score);
     finish_score = Number(finish_score);
+    if(start_score >5000 || finish_score > 5000 || start_score < 0 || finish_score < 0)
+    {
+      alert("ERROR: 0~5000 사이의 수를 입력해 주십시오.");
+      return;
+    }
     if(start_score>finish_score)
     {
       alert("ERROR: 마무리 점수가 시작점수보다 낮습니다.");
