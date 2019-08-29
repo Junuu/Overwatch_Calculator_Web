@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ko"><! language가 korean를 의미>
 <head>
@@ -6,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script>
-
         var p0to2000;
         var p2000to2500;
         var p2500to3000;
@@ -20,7 +20,6 @@
         var p4300to4400;
         var p4400to4450;
         var p4450to4500;
-
       function set_price_team(){
           p0to2000=4500;
           p2000to2500=5500;
@@ -50,11 +49,9 @@
         p4400to4450=80000;
         p4450to4500=90000;
       }
-
       function calculate(startscore,finishscore,check_team)
         {
           var price=0;
-
           while(startscore!=finishscore)
           {
             if(startscore<2000)
@@ -124,15 +121,11 @@
             {
               alert("[ERROR: 계산허용범위 초과] 4500까지 계산된 가격을 반환합니다");
               return price;
-
             }
             startscore = startscore + 1;
           }
-
           return price;
         }
-
-
       function button_active() {
           var start_score = form1.txt1.value ;
           var finish_score = form1.txt2.value ;
@@ -146,7 +139,6 @@
           {
             set_price_not_team();
           }
-
           start_score = Number(start_score);
           finish_score = Number(finish_score);
           if(start_score >5000 || finish_score > 5000 || start_score < 0 || finish_score < 0)
@@ -158,7 +150,6 @@
           {
             alert("ERROR: 마무리 점수가 시작점수보다 낮습니다.");
             document.getElementById("msg").innerHTML = "마무리 점수를 시작점수보다 높게 설정해주세요." ;
-
             return;
           }
           result = calculate(start_score,finish_score,check_team);
@@ -170,9 +161,8 @@
           text-align: center;
           padding: 50px;
         }
-
         .header {
-          padding: 80px;
+          padding: 40px;
           text-align: center;
           background: #1abc9c;
           color: white;
@@ -180,19 +170,18 @@
         .header h1{
           font-size : 40px;
         }
-
         .footer {
           padding: 20px;
           text-align: left;
           background: #ddd;
 
+          position : absolute;
+          bottom : 0px;
+          left : 0px;
+          right : 0px;
+          <!나중에 컨텐츠가 많아지면 밑의 4줄은 지워도 하단에 고정될 것.>
         }
-        .main {
-          -ms-flex: 70%; /* IE10 */
-          flex: 70%;
-          background-color: white;
-          padding: 20px;
-        }
+
         </style>
 </head>
 
@@ -219,6 +208,7 @@
     </p>
   </form>
 <div  id="msg">
+  <br> <!메시지가 나올 공간을 공백으로 적용시켜 놓음>
   </div>
 </div>
 
