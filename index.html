@@ -158,6 +158,42 @@
       </script>
 
       <style>
+      /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+      .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+      }
+
+      /* Style the navigation bar links */
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+
+      /* Right-aligned link */
+      .navbar a.right {
+        float: right;
+      }
+
+      /* Change color on hover */
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Active/current link */
+      .navbar a.active {
+        background-color: #666;
+        color: white;
+      }
         .main_content{
           text-align: center;
           padding: 50px;
@@ -165,7 +201,9 @@
         .header {
           padding: 20px;
           text-align: center;
+          backgound-image:url('apple.png');
           background: #1abc9c;
+
           color: white;
         }
         .header h1{
@@ -202,6 +240,16 @@
   </p>
 
 </div>
+
+<nav>
+  <div class="navbar">
+    <a href="index.html" class="active">홈</a>
+    <a href="#">메뉴1</a>
+    <a href="#">메뉴2</a>
+    <a href="#" class="right">1:1문의하기</a>
+  </div>
+</nav>
+
 <div class="main_content">
 
   <form name="form1">
@@ -226,8 +274,12 @@
   가격표 수정 및 피드백 문의: bababrll@naver.com
 
   <div class="visitor_counter">
+
   <script type="text/javascript" src="https://freecountercode.com/service/Rn5wMFOhC2jVu8igbjG5"></script>
-  <!-- 아주 간단하게 코드 한줄과 위치를 지정해주면 방문자수를 나타낼 수 있음 freecountercode에서 배포중-->    
+
+  <!-- 아주 간단하게 코드 한줄과 위치를 지정해주면 방문자수를 나타낼 수 있음 freecountercode에서 배포중-->
+  <!-- 하지만 여기서 테스트를 하기위해 새로고침하는것도 Today수에 반영되기 때문에 신뢰성은 떨어짐-->
+  <!-- 신뢰성은 Unique Visitors 가 높음-->
   </div>
 </div>
 
