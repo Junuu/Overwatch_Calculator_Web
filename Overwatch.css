@@ -1,6 +1,22 @@
-body {
-  margin : 0px;
+.header {
+  padding: 50px;
+  text-align: center;
+  color:  white;
+  //background: #1abc9c;
+  background-image: url('오버워치 계산기 배경 이미지.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100% ;
 }
+.header h1{
+  font-size : 40px;
+}
+
+  .visitor_counter{
+    position : absolute;
+    right : 0px;
+    top : 0px;
+
+  }
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -31,39 +47,25 @@ body {
   background-color: #666;
   color: white;
 }
+
+
+  body {
+    position : relative;
+    margin : 0px;
+  }
+
   .main_content{
 
     text-align: center;
-    padding: 50px;
+    padding: 20px;
   }
-  .header {
-    padding: 50px;
-    text-align: center;
-    color:  white;
-    //background: #1abc9c;
-    background-image: url('오버워치 계산기 배경 이미지.jpg');
-
-
-
-    background-repeat: no-repeat;
-    background-size: 100% 100% ;
-  }
-  .header h1{
-    font-size : 40px;
-  }
-
-  .visitor_counter{
-    position : absolute;
-    right : 0px;
-    top : 0px;
-
-  }
-
   .footer {
-    position: fixed;
+    position: absolute;
     bottom : 0px;
+    left : 0px;
+    right : 0px;
     /* 위의 두줄은 내용이 많아지면 지워도 잘 작동함*/
-    width: 100%;
+
     padding: 20px;
     text-align: left;
     //background: #ddd;
