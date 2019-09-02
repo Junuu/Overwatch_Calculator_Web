@@ -220,8 +220,10 @@
         }
 
         .footer {
-          position: relative;
-          top : 500px;
+          position: fixed;
+          bottom : 0px;
+          <!--내용이 많아져서 고정 없이도 화면크기에 따라 배치가 잘 되면 위의 두줄은 삭제해도 됨  -->
+          width: 100%;
           padding: 20px;
           text-align: left;
           //background: #ddd;
@@ -241,11 +243,11 @@
   <div class = "header">
   <p>
     <h1>오버워치 계산기 </h1>
-    작성자: 김준우<br>
+
   </p>
   <div class="visitor_counter">
 
-  <script type="text/javascript" src="https://freecountercode.com/service/Rn5wMFOhC2jVu8igbjG5"></script>
+  <script type="text/javascript" src="https://freecountercode.com/service/Rn5wMFOhC2jVu8igbjG5" width="50px" height="50px" ></script>
 
   <!-- 아주 간단하게 코드 한 줄과 위치를 지정해주면 방문자수를 나타낼 수 있음 freecountercode에서 배포중-->
   <!-- 하지만 여기서 테스트를 하기위해 새로고침하는것도 Today수에 반영되기 때문에 신뢰성은 떨어짐-->
@@ -293,10 +295,11 @@
 <div class="footer">
     <hr color="black" />
     <div id="logo">
-      <img src="로고1.PNG" alt="JUNWOO" width="110px" height="50px">
+      <img src="로고1.PNG" alt="JUNWOO" width="110px" height="60px">
     </div>
     UI개선 및 추가기능 계속해서 업데이트 예정<br>
     가격 표 수정 및 피드백 문의: bababrll@naver.com<br>
+    작성자 : 김준우<br>
     Copyright © 2019 All Right Reserved<br>
     <hr color="black" />
 </div>
