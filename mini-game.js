@@ -21,7 +21,7 @@ const player = {
 let platforms = [
   {
     x: 0, //나오는 블록의 위치
-    y: 250,
+    y: screen.height/2-80,
     width: CANVAS_WIDTH, //나오는 블록의 크기
     height: 200,
   },
@@ -77,7 +77,6 @@ function update() {
     player.y = START_Y;
     player.yVelocity = 0;
     SCROLL_SPEED = 10;
-  // alert("\tGame Over!\n\t내 점수 : "+score);
     score = 0;
 
   }
