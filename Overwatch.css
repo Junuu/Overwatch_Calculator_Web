@@ -59,8 +59,14 @@
     text-align: center;
     padding: 20px;
   }
+  .left_order{
+    float:left;
+  }
+  .right_order{
+    float:right;
+  }
   .footer {
-    position: absolute;
+    position: relative;
     bottom : 0px;
     left : 0px;
     right : 0px;
