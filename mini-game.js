@@ -77,7 +77,7 @@ function update() {
     player.y = START_Y;
     player.yVelocity = 0;
     SCROLL_SPEED = 10;
-    alert("\tGame Over!\n\t내 점수 : "+score);
+  // alert("\tGame Over!\n\t내 점수 : "+score);
     score = 0;
 
   }
