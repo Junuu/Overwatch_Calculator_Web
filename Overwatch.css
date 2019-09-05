@@ -1,3 +1,7 @@
+/*
+  홈페이지 최상단에 위치한 header class 정의
+  50px의 여백을 가지며 글자 가운데 정렬과 글자색은 하얀색, 배경으로는 이미지를 가짐.
+*/
 .header {
   padding: 50px;
   text-align: center;
@@ -7,16 +11,23 @@
   background-repeat: no-repeat;
   background-size: 100% 100% ;
 }
+/*
+  header class 안의 h1의 글자크기는 40px 이라는것을 명시.
+*/
 .header h1{
   font-size : 40px;
 }
-
-  .visitor_counter{
-    position : absolute;
-    right : 0px;
-    top : 0px;
-
-  }
+/*
+  visitor_counter class는 오른쪽위로 위치를 지정.
+*/
+.visitor_counter{
+  position : absolute;
+  right : 0px;
+  top : 0px;
+}
+/*
+  홈페이지의 메뉴바 역할을 하는 navbar class 정의.
+*/
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -42,44 +53,42 @@
   color: black;
 }
 
-/* Active/current link */
 .navbar a.active {
   background-color: #666;
   color: white;
 }
 
 
-  body {
-    position : relative;
-    margin : 0px;
-  }
+body {
+  position : relative;
+  margin : 0px;
+}
 
-  .main_content{
+.main_content{
+  text-align: center;
+  padding: 20px;
+}
+/*
+  float속성은 왼쪽 또는 오른쪽으로 배치를 할 수 있도록 해줌.
+*/
+.left_order{
+  float:left;
+}
+.right_order{
+  float:right;
+}
+.footer {
+  position: relative;
+  bottom : 0px;
+  left : 0px;
+  right : 0px;  
+  padding: 20px;
+  text-align: left;
+  font-weight: bold;
+  font-size : 14px;
+}
 
-    text-align: center;
-    padding: 20px;
-  }
-  .left_order{
-    float:left;
-  }
-  .right_order{
-    float:right;
-  }
-  .footer {
-    position: relative;
-    bottom : 0px;
-    left : 0px;
-    right : 0px;
-    /* 위의 두줄은 내용이 많아지면 지워도 잘 작동함*/
-
-    padding: 20px;
-    text-align: left;
-    //background: #ddd;
-    font-weight: bold;
-    font-size : 14px;
-  }
-
-  #logo{
-    float : left;
-    margin-right: 50px;
-  }
+#logo{
+  float : left;
+  margin-right: 50px;
+}
