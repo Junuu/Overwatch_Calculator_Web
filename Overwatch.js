@@ -11,6 +11,7 @@ var p4200to4300;
 var p4300to4400;
 var p4400to4450;
 var p4450to4500;
+
 function set_price_team(){
   p0to2000=4500;
   p2000to2500=5500;
@@ -24,6 +25,7 @@ function set_price_team(){
   p4200to4300=70000;
   p4300to4400=100000;
 }
+
 function set_price_not_team()
 {
 p0to2000=3000;
@@ -40,9 +42,31 @@ p4300to4400=65000;
 p4400to4450=80000;
 p4450to4500=90000;
 }
-function calculate(startscore,finishscore,check_team)
+function set_price_team_duo()
+{
+	p0to2000=6000;
+	p2000to2500=7500;
+	p2500to3000=8000;
+	p3000to3250=10000;
+	p3250to3500=12000;
+	p3500to3750=19000;
+	p3750to4000=27000;
+}
+
+function set_price_not_team_duo()
+{
+p0to2000=3900;
+p2000to2500=4550;
+p2500to3000=5200;
+p3000to3250=7150;
+p3250to3500=8450;
+p3500to3750=13500;
+p3750to4000=18000;
+}
+function calculate(startscore,finishscore,check_team,check_solo)
 {
   var price=0;
+
   while(startscore!=finishscore)
   {
     if(startscore<2000)
@@ -75,6 +99,11 @@ function calculate(startscore,finishscore,check_team)
     }
     else if(startscore<4100)
     {
+      if(check_solo=="듀오")
+      {
+        alert("[ERROR: 계산허용범위 초과] 4000까지 계산된 가격을 반환합니다");
+        return price;
+      }
       price=price+(p4000to4100/50);
     }
     else if(startscore<4200)
@@ -117,32 +146,120 @@ function calculate(startscore,finishscore,check_team)
   }
   return price;
 }
+
 function button_active() {
-  var start_score = form1.txt1.value ;
-  var finish_score = form1.txt2.value ;
-  var check_team = form1.team.value ;
+    var start_score = form1.txt1.value ;
+    var finish_score = form1.txt2.value ;
+    var check_team = form1.team.value ;
+    var check_solo = form1.check_solo.value;
+    var result = 0;
+    if(check_team == "팀장")
+    {
+      if(check_solo=="듀오")
+      {
+        set_price_team_duo();
+      }
+      else //솔로
+      {
+          set_price_team();
+      }
+    }
+    else //기사
+    {
+      if(check_solo=="듀오")
+      {
+        set_price_not_team_duo();
+      }
+      else
+      {
+        set_price_not_team();
+      }
+
+    }
+    start_score = Number(start_score);
+    finish_score = Number(finish_score);
+    if(start_score >5000 || finish_score > 5000 || start_score < 0 || finish_score < 0)
+    {
+      alert("ERROR: 0~5000 사이의 수를 입력해 주십시오.");
+      return;
+    }
+    if(start_score>finish_score)
+    {
+      alert("ERROR: 마무리 점수가 시작점수보다 낮습니다.");
+      document.getElementById("msg").innerHTML = "마무리 점수를 시작점수보다 높게 설정해주세요." ;
+      return;
+    }
+    result = calculate(start_score,finish_score,check_team,check_solo);
+    document.getElementById("msg").innerHTML = "계산된 가격 : " + result ;
+  }
+
+
+function batch_button_active(){
+  var startscore = form1.txt3.value;
+  var win_count = form1.txt4.value;
   var result = 0;
-  if(check_team == "팀장")
+
+  startscore = Number(startscore);
+  win_count = Number(win_count);
+  if(startscore >5000 || startscore < 0)
   {
-    set_price_team();
+    alert("ERROR: 배치점수를 0~5000 사이의 수를 입력해 주십시오.");
+    return;
+  }
+  if(win_count < 0 || win_count> 10)
+  {
+    alert("ERROR: 승 수를 0~10 사이의 수를 입력해 주십시오.");
+    return;
+  }
+
+  if(startscore< 3000)
+  {
+    result= 3000* win_count;
+  }
+  else if(startscore<3250)
+  {
+    result= 3500* win_count;
+  }
+  else if(startscore<3500)
+  {
+    result= 4000* win_count;
+  }
+  else if(startscore<3750)
+  {
+    result= 5000* win_count;
+  }
+  else if(startscore<4000)
+  {
+    result= 6000* win_count;
+  }
+  else if(startscore<4100)
+  {
+    result= 9000* win_count;
+  }
+  else if(startscore<4200)
+  {
+    result= 10000* win_count;
+  }
+  else if(startscore<4300)
+  {
+    result= 12000* win_count;
+  }
+  else if(startscore<4400)
+  {
+    result= 13000* win_count;
+  }
+  else if(startscore<4450)
+  {
+    result= 14000* win_count;
+  }
+  else if(startscore<4500)
+  {
+    result= 16000* win_count;
   }
   else
   {
-    set_price_not_team();
-  }
-  start_score = Number(start_score);
-  finish_score = Number(finish_score);
-  if(start_score >5000 || finish_score > 5000 || start_score < 0 || finish_score < 0)
-  {
-    alert("ERROR: 0~5000 사이의 수를 입력해 주십시오.");
+    alert("ERROR : 4500 이하까지만 계산 가능합니다.");
     return;
   }
-  if(start_score>finish_score)
-  {
-    alert("ERROR: 마무리 점수가 시작점수보다 낮습니다.");
-    document.getElementById("msg").innerHTML = "마무리 점수를 시작점수보다 높게 설정해주세요." ;
-    return;
-  }
-  result = calculate(start_score,finish_score,check_team);
   document.getElementById("msg").innerHTML = "계산된 가격 : " + result ;
-  }
+}
