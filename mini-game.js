@@ -127,7 +127,7 @@ function createPlatform() {
   const lastPlatform = platforms[platforms.length - 1];
   platforms.push({
     x: lastPlatform.x + lastPlatform.width + getRandomNumber(10 * player.jumpPower, 20 * player.jumpPower),
-    y: lastPlatform.y + getRandomNumber(player.jumpPower*(-1), player.jumpPower),
+    y: lastPlatform.y ,
     width: getRandomNumber(CANVAS_WIDTH/10, CANVAS_WIDTH/3), //플랫폼의 랜덤 길이 결정 왼쪽수가 최소, 오른쪽 수가 최대
     height: 200,
   });
