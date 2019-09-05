@@ -39,13 +39,24 @@
       <form name="form1">
         <p>
           <h3> 본인에게 해당하는 걸 선택해주세요 </h3>
+          <h5> 아무것도 체크하지 않으면 기사,솔로 값으로 계산합니다. </h5>
           <input type="radio" name="team" value="팀장">팀장
           <input type="radio" name="team" value="기사">기사
         </p>
         <p>
+          <input type="radio" name="check_solo" value="솔로">솔로
+          <input type="radio" name="check_solo" value="듀오">듀오
+        </p>
+        <p>
           <input type="text" name="txt1" size="10px" placeholder="시작점수" >
           <input type="text" name="txt2" size="10px" placeholder="마무리점수">
-          <input type="button" value="계산" onclick="button_active();"><br>
+          <input type="button" value="계산" onclick="button_active();">
+        </p>
+
+        <p>
+          <input type="text" name="txt3" size="10px" placeholder="배치점수" >
+          <input type="text" name="txt4" size="10px" placeholder="승 수">
+          <input type="button" value="계산" onclick="batch_button_active();"><br>
         </p>
       </form>
 
