@@ -64,6 +64,24 @@ body {
   margin : 0px;
 }
 
+/*왼쪽에 위치시키기*/
+.left_content{
+  float:left;
+  margin-left: 50px;
+  margin-top : 20px;
+}
+
+/*수직선 그리기*/
+.vr {
+    height: 100%;
+    border-left: 1px solid gray;
+    margin-left: 50px;
+    margin-top : 20px;
+    float:left;
+    /*display: inline-block;*/
+    /*margin: 0 auto;*/
+}
+
 .main_content{
   text-align: center;
   padding: 20px;
