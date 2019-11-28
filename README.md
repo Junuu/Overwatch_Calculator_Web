@@ -21,6 +21,9 @@
 ### Cafe24에서 도메인 구매 후, DNS관리에서 호스트IP를 깃허브의 IP로 설정한 후, 깃허브의 Settings 에서 도메인을 등록하여 접속하기 쉬운 주소를 가짐.
 
 ### [네이버웹마스터도구등록](https://searchadvisor.naver.com/guide/seo-basic-create)을 통하여 네이버에 웹사이트가 나타날 수 있도록 함.
+
+### [구글웹마스터등록](https://search.google.com/)을 통해 구글에 웹사이트가 나타날 수 있도록 함.
+
 ------
 
 #### 개발환경 : Atom 편집기, 윈도우8
