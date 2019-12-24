@@ -27,12 +27,31 @@ function set_price_team()
     p4200to4300=65000;
     p4300to4400=80000;
     p4400to4450=110000;
-    p4450to4500=110000;
+    p4450to4500=120000;
     p4500to4550=300000;
     p4550to4600=600000;
 
 }
 
+function set_price_max_team()
+{
+  p0to2000=4500;
+  p2000to2500=5500;
+  p2500to3000=6000;
+  p3000to3250=7000;
+  p3250to3500=8500;
+  p3500to3750=12000;
+  p3750to4000=16000;
+  p4000to4100=25000;
+  p4100to4200=40000;
+  p4200to4300=70000;
+  p4300to4400=100000;
+  p4400to4450=110000;
+  p4450to4500=120000;
+  p4500to4550=300000;
+  p4550to4600=600000;
+
+}
 function set_price_not_team()
 {
   p0to2000=3000;
@@ -134,7 +153,7 @@ function calculate(startscore,finishscore,check_team,check_solo)
           {
               price = price + (p4500to4550/50);
           }
-          
+
       }
       else if (startscore < 4600)
       {
@@ -142,10 +161,10 @@ function calculate(startscore,finishscore,check_team,check_solo)
       }
       else
       {
-          
+
               alert("[ERROR: 계산허용범위 초과] 4600까지 계산된 가격을 반환합니다");
               return price;
-          
+
       }
     startscore = startscore + 1;
   }
@@ -169,6 +188,17 @@ function button_active() {
       else //솔로
       {
           set_price_team();
+      }
+    }
+    else if(check_team=="맥스팀")
+    {
+      if(check_solo=="듀오")
+      {
+        set_price_team_duo();
+      }
+      else //솔로
+      {
+          set_price_max_team();
       }
     }
     else //기사
