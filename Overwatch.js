@@ -90,9 +90,21 @@ function set_price_not_team_duo()
   p3750to4000=18000;
 }
 
-function calculate(startscore,finishscore,check_team,check_solo)
+function calculate(startscore,finishscore,check_team,check_solo,add_pay)
 {
   var price=0;
+  console.log(add_pay);
+  var check_nan=isNaN(add_pay);
+  if(check_nan)
+  {
+    add_pay= 1.0;
+  }
+  else
+  {
+    add_pay= add_pay/100 + 1.0
+  }
+
+  console.log(add_pay);
   //시작 점수가 마지막점수와 같지 않을 때 까지 startscore를 하나씩 더해가며 점수를 검사하여 price값을 갱신
   while(startscore!=finishscore)
   {
@@ -121,7 +133,7 @@ function calculate(startscore,finishscore,check_team,check_solo)
           if (check_solo == "듀오") //듀오의 경우 4000점까지의 가격밖에 설정이 안되있으므로 4000점까지 계산
           {
               alert("[ERROR: 계산허용범위 초과] 4000까지 계산된 가격을 반환합니다");
-              return price;
+              return price*add_pay;
           }
           price = price + (p4000to4100 / 50);
       }
@@ -147,7 +159,7 @@ function calculate(startscore,finishscore,check_team,check_solo)
       {
           if (check_team == "기사") {
               alert("[ERROR: 계산허용범위 초과] 4500까지 계산된 가격을 반환합니다");
-              return price;
+              return price*add_pay;
           }
           else
           {
@@ -163,18 +175,19 @@ function calculate(startscore,finishscore,check_team,check_solo)
       {
 
               alert("[ERROR: 계산허용범위 초과] 4600까지 계산된 가격을 반환합니다");
-              return price;
+              return price*add_pay;
 
       }
     startscore = startscore + 1;
   }
-  return price;
+  return price*add_pay;
 }
 //첫번째 버튼이 눌렸을 때 호출되는 함수
 function button_active() {
     //form으로 부터 데이터를 받아옴
     var start_score = form1.txt1.value ;
     var finish_score = form1.txt2.value ;
+    var add_pay = form1.txt5.value ;
     var check_team = form1.team.value ;
     var check_solo = form1.check_solo.value;
     var result = 0;
@@ -216,6 +229,7 @@ function button_active() {
     // text에서 문자로 입력을 받기 때문에 Number()를 통하여 숫자로 형변환
     start_score = Number(start_score);
     finish_score = Number(finish_score);
+    add_pay = Number(add_pay);
     //입력 범위 설정
     if(start_score >5000 || finish_score > 5000 || start_score < 0 || finish_score < 0)
     {
@@ -228,7 +242,7 @@ function button_active() {
       document.getElementById("msg").innerHTML = "마무리 점수를 시작점수보다 높게 설정해주세요." ;
       return;
     }
-    result = calculate(start_score,finish_score,check_team,check_solo);
+    result = calculate(start_score,finish_score,check_team,check_solo,add_pay);
     document.getElementById("msg").innerHTML = "계산된 가격 : " + result ;
   }
 
