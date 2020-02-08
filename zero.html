@@ -1,4 +1,4 @@
-<doctype html>
+﻿<doctype html>
 <html lang="ko"><!--language가 korean를 의미-->
   <head>
     <title>오버워치 계산기</title>
@@ -49,12 +49,14 @@
               <input type="radio" name="team" value="팀장">팀장
           </p>
         <p>
+          <input type="radio" name="check_solo" value="딜러">딜러
           <input type="radio" name="check_solo" value="솔로">솔로
           <input type="radio" name="check_solo" value="듀오">듀오
         </p>
         <p>
           <input type="text" name="txt1" size="10px" placeholder="시작점수" > <!--text type은 입력을 받을 수 있음-->
           <input type="text" name="txt2" size="10px" placeholder="마무리점수">
+          <input type="text" name="txt5" size="10px" placeholder="페이 추가">
           <input type="button" value="계산" onclick="button_active();">
           <!-- button type은 버튼을 생성할 수 있으며 onclick 속성을 통해 버튼이 눌렸을 때 실행할 것들을 정의할 수 있음-->
         </p>
@@ -68,7 +70,7 @@
       <div  id="msg">
         <br> <!메시지가 나올 공간을 공백으로 적용시켜 놓음>
       </div>
-      
+
     </div>
 
 
