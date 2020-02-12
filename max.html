@@ -1,0 +1,92 @@
+﻿<doctype html>
+<html lang="ko"><!--language가 korean를 의미-->
+  <head>
+    <title>오버워치 계산기</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="오버워치 점수별 가격 계산을 도와주는 사이트 입니다."> <!-- 페이지 소개-->
+    <meta name="robots" content="index,follow"> <!-- 로봇 접근 허용-->
+    <link rel="canonical" href="https://junwoo.shop"> <!--대표 url-->
+    <meta name="keywords" content="오버워치,오버워치계산,오버워치계산기,옵치 계산,옵치 점수 계산" />
+    <meta property="og:type" content="website"> <!--오픈 그래프-->
+    <meta property="og:title" content="오버워치 계산기">
+    <meta property="og:description" content="오버워치 점수별 가격 계산을 도와주는 사이트 입니다.">
+    <meta property="og:image" content="https://junuu.github.io/Overwatch_Calculator_Web/로고1.PNG">
+    <meta property="og:url" content="https://junuu.github.io/Overwatch_Calculator_Web/">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--모바일 환경에서도 보기좋게 해주는 코드-->
+    <link rel="stylesheet" type="text/css" href="Overwatch.css"> <!--외부 CSS 호출-->
+    <script type="text/javascript" src="Overwatch.js"></script> <!--계산기기능 외부 JS 호출-->
+  </head>
+
+  <body>
+
+    <div class = "header"> <!-- 홈페이지 최상단에 위치하여 홈페이지를 소개-->
+      <p>
+        <h1>오버워치 계산기 </h1>
+      </p>
+      <div class="visitor_counter">
+        <script type="text/javascript" src="https://freecountercode.com/service/Rn5wMFOhC2jVu8igbjG5" width="50px" height="50px" ></script>
+        <!-- 아주 간단하게 코드 한 줄과 위치를 지정해주면 방문자수를 나타낼 수 있음 freecountercode에서 배포중-->
+        <!-- 하지만 여기서 테스트를 하기위해 새로고침하는것도 Today수에 반영되기 때문에 신뢰성은 떨어짐-->
+        <!-- 신뢰성은 Unique Visitors 가 높음-->
+      </div>
+
+    </div>
+
+    <nav> <!--header 부분 바로 아래에 위치하여 홈페이지를 탐색할 수 있는 메뉴바 역할 -->
+      <div class="navbar">
+        <a href="index.html">홈</a>
+        <a href="zero.html">ZERO</a>
+        <a href="max.html" class="active">MAX</a>
+        <a href="mini-game.html">미니게임</a>
+        <a href="map.html">지도</a>
+        <a href="comment.html" class="right">댓글</a>
+      </div>
+    </nav>
+
+    <div class="main_content"> <!-- 홈페이지의 주요 내용을 담고있음-->
+      <form name="form1"> <!-- form을 통해 데이터를 주고 받을 수 있음-->
+          <p>
+              <h3> MAX TEAM 전용</h3>
+	  <input type="radio" name="team" value="맥스팀">맥스팀
+          </p>
+        <p>
+          <input type="radio" name="check_solo" value="딜러">딜러
+          <input type="radio" name="check_solo" value="솔로">솔로
+          <input type="radio" name="check_solo" value="듀오">듀오
+        </p>
+        <p>
+          <input type="text" name="txt1" size="10px" placeholder="시작점수" > <!--text type은 입력을 받을 수 있음-->
+          <input type="text" name="txt2" size="10px" placeholder="마무리점수">
+          <input type="text" name="txt5" size="10px" placeholder="페이 추가">
+          <input type="button" value="계산" onclick="button_active();">
+          <!-- button type은 버튼을 생성할 수 있으며 onclick 속성을 통해 버튼이 눌렸을 때 실행할 것들을 정의할 수 있음-->
+        </p>
+        <p>
+          <input type="text" name="txt3" size="10px" placeholder="배치점수" >
+          <input type="text" name="txt4" size="10px" placeholder="승 수">
+          <input type="button" value="계산" onclick="batch_button_active();"><br>
+        </p>
+        <h6> 입력이 끝나신 후에는 계산버튼을 눌러주세요 </h6>
+      </form>
+      <div  id="msg">
+        <br> <!메시지가 나올 공간을 공백으로 적용시켜 놓음>
+      </div>
+
+    </div>
+
+
+
+    <div class="footer"> <!-- 홈페이지 내용의 마지막 부분에 위치하여 간단한 소개글 등에 쓰임-->
+        <hr color="black" /> <!-- 수평선 하나를 그어줌-->
+        <div id="logo"> <!-- logo의 위치-->
+          <img src="로고1.PNG" alt="JUNWOO" width="110px" height="60px">
+        </div>
+        UI개선 및 추가기능 계속해서 업데이트 예정<br>
+        가격표 수정 및 피드백 문의: bababrll@naver.com<br>
+        작성자 : 김준우<br>
+        Copyright © 2019 All Right Reserved<br>
+        <hr color="black" />
+    </div>
+
+  </body>
+</html>
