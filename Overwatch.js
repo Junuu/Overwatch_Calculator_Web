@@ -43,6 +43,25 @@ function set_price_team_duo_et()
 	p3500to3750=17000;
 	p3750to4000=23000;
 }
+function set_price_team_dealer_et()
+{
+    p0to2000=4600;
+    p2000to2500=5175;
+    p2500to3000=6325;
+    p3000to3250=7475;
+    p3250to3500=9200;
+    p3500to3750=12650;
+    p3750to4000=17250;
+    p4000to4100=25300;
+    p4100to4200=40250;
+    p4200to4300=63250;
+    p4300to4400=92000;
+    p4400to4450=110000;
+    p4450to4500=120000;
+    p4500to4550=300000;
+    p4550to4600=600000;
+
+}
 
 function set_price_team()
 {
@@ -412,7 +431,7 @@ function et_button_active() {
       }
       else if(check_solo=="딜러") //솔로
       {
-          set_price_team_dealer();
+          set_price_team_dealer_et();
       }
       else
       {
